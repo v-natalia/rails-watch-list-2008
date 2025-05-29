@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   # INDEX TO DO si on a le temps
+
   resources :lists, only: [:new, :create, :show] do
     resources :bookmarks, only: [:new, :create]
   end

@@ -1,0 +1,30 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.kinokompendium.de/foto_kino_berlin/cinema_paris_kino_s0101.jpg);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
+<div class="container">
+<% @list.movies.each do |movie| %>
+    <p><%= movie.title %></p>
+    <p><%= movie.overview %></p>
+    <%= image_tag movie.poster_url, alt: "text", width: 300 %>
+  <% end %>
+</div>
+<%# en bas vous trouverez la même info mais avec une card et du style %>
+
+<div class="container">
+  <div class="cards mt-5">
+  <% @list.movies.each do |movie| %>
+    <div class="card-trip mb-5">
+      <%= image_tag movie.poster_url, alt: movie.title %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= movie.title %></h2>
+          <p><%= movie.overview %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+<div>
